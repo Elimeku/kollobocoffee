@@ -1,0 +1,1602 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kollobo Coffee | Premium Ethiopian Green & Roasted Coffee Sourcing</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        espresso: '#12110E',
+                        clay: '#B85C38',
+                        gold: '#C5A880',
+                        goldDark: '#9E7B54',
+                        cream: '#F9F6F0',
+                        creamDark: '#EDE8DF',
+                        sand: '#DFD8CC',
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes subtle-zoom {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .animate-subtle-zoom {
+            animation: subtle-zoom 25s infinite ease-in-out;
+        }
+        .grain-bg {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #12110E;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #9E7B54;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #C5A880;
+        }
+    </style>
+</head>
+<body class="bg-cream text-espresso font-sans antialiased selection:bg-gold selection:text-espresso overflow-x-hidden">
+
+    <!-- Top Global Notification -->
+    <div class="bg-espresso text-cream text-[11px] uppercase tracking-[0.2em] py-2.5 px-4 text-center border-b border-gold/10 z-50 relative">
+        <span>Exclusive micro-lots of authentic Ethiopian Arabica are now live. <a href="#packaging-inspector" class="text-gold underline hover:text-white transition duration-300">View Packaging & Stickers</a></span>
+    </div>
+
+    <!-- Header Navigation -->
+    <header id="main-header" class="fixed top-[37px] left-0 w-full z-40 transition-all duration-500 bg-transparent py-6">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <span class="font-serif text-2xl md:text-3xl font-semibold tracking-[0.15em] text-cream group-hover:text-gold transition duration-300" id="brand-logo">KOLOBO</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-gold transition-transform duration-300 group-hover:scale-150"></span>
+            </a>
+
+            <!-- Desktop Links -->
+            <nav class="hidden lg:flex items-center gap-10">
+                <a href="#about" class="text-xs uppercase tracking-[0.25em] text-cream/80 hover:text-gold transition duration-300 nav-link">Heritage</a>
+                <a href="#packaging-inspector" class="text-xs uppercase tracking-[0.25em] text-cream/80 hover:text-gold transition duration-300 nav-link">Packaging Details</a>
+                <a href="#origin-explorer" class="text-xs uppercase tracking-[0.25em] text-cream/80 hover:text-gold transition duration-300 nav-link">Origins Map</a>
+                <a href="#gallery" class="text-xs uppercase tracking-[0.25em] text-cream/80 hover:text-gold transition duration-300 nav-link">Visual Gallery</a>
+                <a href="#catalog" class="text-xs uppercase tracking-[0.25em] text-cream/80 hover:text-gold transition duration-300 nav-link">Active Lots</a>
+                <a href="#standards" class="text-xs uppercase tracking-[0.25em] text-cream/80 hover:text-gold transition duration-300 nav-link">Sourcing Standards</a>
+            </nav>
+
+            <!-- CTA/Contact Trigger -->
+            <div class="hidden sm:flex items-center gap-6">
+                <a href="#b2b-portal" class="border border-gold/40 hover:border-gold bg-espresso/50 text-cream px-6 py-2.5 text-xs uppercase tracking-[0.15em] hover:bg-gold hover:text-espresso transition duration-500 rounded-sm font-medium" id="nav-cta">
+                    Wholesale Hub
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobile-menu-toggle" class="lg:hidden text-cream hover:text-gold transition duration-300 focus:outline-none" aria-label="Toggle Menu">
+                <i data-lucide="menu" class="w-6 h-6" id="menu-icon-btn"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer Overlay -->
+    <div id="mobile-drawer" class="fixed inset-0 bg-espresso/95 z-50 hidden flex-col justify-between p-8 transition-opacity duration-300 ease-in-out opacity-0">
+        <div>
+            <div class="flex items-center justify-between mb-16">
+                <a href="#" class="font-serif text-2xl font-semibold tracking-[0.15em] text-cream">KOLOBO</a>
+                <button id="mobile-drawer-close" class="text-cream hover:text-gold transition duration-300">
+                    <i data-lucide="x" class="w-7 h-7"></i>
+                </button>
+            </div>
+            <nav class="flex flex-col gap-6">
+                <a href="#about" class="text-lg font-serif text-cream/90 hover:text-gold transition duration-300 block py-2 border-b border-white/5 mobile-nav-link">Our Heritage</a>
+                <a href="#packaging-inspector" class="text-lg font-serif text-cream/90 hover:text-gold transition duration-300 block py-2 border-b border-white/5 mobile-nav-link">Packaging Details</a>
+                <a href="#origin-explorer" class="text-lg font-serif text-cream/90 hover:text-gold transition duration-300 block py-2 border-b border-white/5 mobile-nav-link">Ethiopian Origins</a>
+                <a href="#gallery" class="text-lg font-serif text-cream/90 hover:text-gold transition duration-300 block py-2 border-b border-white/5 mobile-nav-link">Visual Gallery</a>
+                <a href="#catalog" class="text-lg font-serif text-cream/90 hover:text-gold transition duration-300 block py-2 border-b border-white/5 mobile-nav-link">Arabica Green Lots</a>
+                <a href="#standards" class="text-lg font-serif text-cream/90 hover:text-gold transition duration-300 block py-2 border-b border-white/5 mobile-nav-link">Sourcing Standards</a>
+            </nav>
+        </div>
+        <div class="flex flex-col gap-4">
+            <a href="#b2b-portal" class="w-full text-center border border-gold hover:border-white bg-gold text-espresso hover:bg-transparent hover:text-cream py-3.5 text-xs uppercase tracking-[0.2em] transition duration-300 rounded-sm font-semibold mobile-nav-link">
+                Wholesale Portal
+            </a>
+            <div class="flex items-center justify-center gap-6 text-cream/40 text-xs mt-4">
+                <span>Addis Ababa</span>
+                <span>•</span>
+                <span>Minneapolis</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cinematic Hero Section with Packaging Centerpiece -->
+    <section class="relative min-h-screen flex items-center bg-espresso overflow-hidden">
+        <!-- Background Ambient Design -->
+        <div class="absolute inset-0 z-0 overflow-hidden select-none pointer-events-none">
+            <div class="absolute inset-0 bg-gradient-to-r from-espresso via-espresso/80 to-transparent z-10"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-espresso via-transparent to-espresso/50 z-10"></div>
+            
+            <!-- Volumetric lights -->
+            <div class="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-clay/10 blur-[140px]"></div>
+            <div class="absolute bottom-1/4 right-10 w-80 h-80 rounded-full bg-gold/10 blur-[120px]"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-20 pt-32 pb-16 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Text Area -->
+                <div class="lg:col-span-7 flex flex-col justify-center">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 w-fit mb-6">
+                        <span class="w-1.5 h-1.5 rounded-full bg-gold animate-ping"></span>
+                        <span class="text-[10px] md:text-xs uppercase tracking-[0.25em] text-cream">Direct-Import Premium Heirlooms</span>
+                    </div>
+                    <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-cream font-light leading-[1.1] mb-6">
+                        Experience Africa's <br class="hidden md:inline">
+                        <span class="font-normal italic text-gold">Finest Heirloom</span> <br class="hidden md:inline">
+                        Coffee Beans.
+                    </h1>
+                    <p class="text-sand/80 text-sm md:text-base max-w-2xl font-light leading-relaxed mb-10">
+                        Kollobo bridges the gap between the legendary high-altitude terroirs of Ethiopia and discerning roasters worldwide. Every batch is traceable, masterfully processed, and curated to unlock the ultimate aromatic clarity.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                        <a href="#packaging-inspector" class="bg-gold hover:bg-cream text-espresso px-8 py-4 text-xs font-semibold uppercase tracking-[0.2em] rounded-sm text-center transition duration-300 flex items-center justify-center gap-2 group shadow-lg shadow-gold/5">
+                            Inspect Packaging Stickers
+                            <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                        <a href="#origin-explorer" class="border border-cream/20 hover:border-gold hover:bg-white/5 text-cream px-8 py-4 text-xs font-semibold uppercase tracking-[0.2em] rounded-sm text-center transition duration-300">
+                            Explore Highland Origins
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Live Showcase of the actual physical mock-up -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative group max-w-sm w-full bg-espresso/80 border border-gold/20 backdrop-blur-md p-6 rounded-sm shadow-2xl transition-all duration-500 hover:border-gold/50 overflow-hidden">
+                        <div class="absolute top-0 right-0 bg-gold/10 text-gold text-[9px] uppercase tracking-widest px-3 py-1.5 border-b border-l border-gold/20">
+                            Current Release
+                        </div>
+                        
+                        <div class="overflow-hidden rounded-sm bg-stone-900 border border-white/5 relative aspect-[3/4]">
+                            <!-- Visual referencing verbatim: IMG-20260110-WA0015.jpg -->
+                            <img src="IMG-20260110-WA0015.jpg" alt="Kolobo Coffee Premium 3D Package Mockup" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-t from-espresso via-transparent to-transparent opacity-45"></div>
+                        </div>
+
+                        <div class="mt-6 space-y-3">
+                            <div class="flex justify-between items-end border-b border-white/5 pb-2">
+                                <span class="font-serif text-xl text-cream tracking-wide">Yirgacheffe Arabica</span>
+                                <span class="text-gold text-xs font-medium uppercase tracking-wider">1 Pound Roasted</span>
+                            </div>
+                            <p class="text-xs text-sand/60 font-light leading-relaxed">
+                                Experience authentic medium-roasted, high-altitude Ethiopian beans directly packaged and sealed for absolute aroma lock.
+                            </p>
+                            <div class="flex items-center justify-between text-[11px] text-gold pt-2">
+                                <span class="flex items-center gap-1.5"><i data-lucide="shield-check" class="w-3.5 h-3.5"></i> Authenticity Certified</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 text-cream/40 text-[10px] tracking-[0.25em] uppercase z-20">
+            <span>Scroll Down</span>
+            <div class="w-[1px] h-10 bg-gold/30 relative overflow-hidden rounded-full">
+                <div class="absolute top-0 left-0 w-full h-1/2 bg-gold animate-bounce"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Heritage & Hallmark Section -->
+    <section id="about" class="py-24 bg-cream relative overflow-hidden grain-bg">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+            <!-- Header Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-16">
+                <div class="lg:col-span-6">
+                    <span class="text-xs uppercase tracking-[0.3em] text-clay font-semibold block mb-2">Our Core Identity Seal</span>
+                    <h2 class="font-serif text-3xl md:text-5xl font-light text-espresso leading-tight">
+                        Built Upon Trust, Unwavering Quality, & Sourcing Expertise.
+                    </h2>
+                </div>
+                <div class="lg:col-span-6">
+                    <p class="text-espresso/70 font-light text-sm md:text-base leading-relaxed">
+                        Kollobo Coffee honors ancestral cultivation methods across Ethiopia. We reject mass brokerage transactions to partner directly with smallholder farm networks, assuring complete transparency and delivering exceptional green and roasted coffee parameters to global roasters.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Heritage Hallmark Spotlight Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pt-8 border-t border-espresso/10">
+                <!-- Hallmark Image 1: Jeweled Golden Logo -->
+                <div class="lg:col-span-5 flex flex-col justify-center items-center text-center p-8 bg-espresso text-cream rounded-sm shadow-xl relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-[4px] bg-gold"></div>
+                    <span class="text-[10px] uppercase tracking-[0.3em] text-gold mb-6">The Golden Mark of Quality</span>
+                    
+                    <div class="w-72 h-72 rounded-full overflow-hidden border-2 border-gold/20 flex items-center justify-center p-2 bg-stone-900 shadow-inner">
+                        <!-- Visual referencing verbatim: IMG-20251220-WA0013.jpg -->
+                        <img src="IMG-20251220-WA0013.jpg" alt="Premium Jeweled Kolobo Coffee Logo" class="w-full h-full object-cover rounded-full hover:scale-105 transition-transform duration-700">
+                    </div>
+                    
+                    <h3 class="font-serif text-2xl font-light mt-6 text-cream">The Imperial Standard</h3>
+                    <p class="text-xs text-sand/60 font-light max-w-sm mt-3 leading-relaxed">
+                        Representing our uncompromising standard. Just as precious gems are meticulously sorted, our unroasted heirlooms undergo absolute grading threshold inspections.
+                    </p>
+                </div>
+
+                <!-- Brand Pillars Column -->
+                <div class="lg:col-span-7 space-y-8">
+                    <!-- Sourcing Hallmark Display (Premium Brand Mark) -->
+                    <div class="flex flex-col md:flex-row gap-6 items-start bg-white p-6 border border-gold/10 rounded-sm shadow-sm">
+                        <div class="w-24 h-24 shrink-0 overflow-hidden rounded-sm bg-espresso flex items-center justify-center p-1 border border-gold/20">
+                            <!-- Visual referencing verbatim: IMG-20251220-WA0013.jpg -->
+                            <img src="IMG-20251220-WA0013.jpg" alt="Kollobo Jeweled Seal" class="w-full h-full object-cover rounded-sm">
+                        </div>
+                        <div>
+                            <span class="text-[9px] uppercase tracking-widest text-clay font-bold block mb-1">Kollobo Quality Seal</span>
+                            <h4 class="font-serif text-xl text-espresso mb-2">"Experience Africa's Finest"</h4>
+                            <p class="text-xs text-espresso/70 font-light leading-relaxed">
+                                Our signature trademark is backed by genuine multi-generational community relationships. We cultivate sustainable agriculture practices and secure fair premium payouts directly to rural cooperative networks.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Direct Trade Integrity -->
+                    <div class="flex gap-4 items-start">
+                        <div class="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center text-goldDark shrink-0">
+                            <i data-lucide="shield-check" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-serif text-lg text-espresso mb-1">Traceable Highland Sourcing</h4>
+                            <p class="text-xs text-espresso/70 font-light leading-relaxed">
+                                Every lot is fully verified from wet mills and mountain washing grids. No mixed-bag brokerage or blind blending. We protect microclimates to honor original regional genetics.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Volatile Preserving Logistics -->
+                    <div class="flex gap-4 items-start">
+                        <div class="w-12 h-12 rounded-full bg-clay/10 flex items-center justify-center text-clay shrink-0">
+                            <i data-lucide="globe-2" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-serif text-lg text-espresso mb-1">Advanced Global Logistics</h4>
+                            <p class="text-xs text-espresso/70 font-light leading-relaxed">
+                                From processing plants in Addis Ababa to global sea channels, we govern strict temperature and moisture tolerances to protect delicate organic volatiles.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Packaging Sticker Inspector -->
+    <section id="packaging-inspector" class="py-24 bg-espresso text-cream relative overflow-hidden border-t border-b border-gold/15">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-[0.35em] text-gold font-semibold block mb-2">Physical Specifications</span>
+                <h2 class="font-serif text-3xl md:text-5xl font-light leading-tight">Interactive Packaging & Sticker Inspector</h2>
+                <p class="text-sand/60 text-xs md:text-sm mt-4 font-light leading-relaxed">
+                    Examine the meticulously designed labels that accompany our high-altitude roasted offerings. Flip between front-facing indicators and full distribution analytics verbatim.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Inspector Controls & Specs Details (Left) -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="bg-white/5 border border-white/10 p-8 rounded-sm">
+                        <span class="text-[10px] text-gold uppercase tracking-wider block mb-1">Verified Sticker Information</span>
+                        <h3 class="font-serif text-2xl font-light text-cream mb-4" id="sticker-title">Front Label View</h3>
+                        
+                        <div class="space-y-4 text-xs text-sand/80 font-light leading-relaxed">
+                            <p id="sticker-description">
+                                Displays the bold premium typography, roasted coffee beans artwork, and classic origin designation: <strong>Ethiopian Arabica - Yirgacheffe</strong>. Features instant roast indicators spanning Light, Medium, and Dark roasts.
+                            </p>
+                            
+                            <div class="border-t border-white/10 pt-4 space-y-2">
+                                <div class="flex justify-between">
+                                    <span class="text-cream/40">Roast Profile:</span>
+                                    <span class="text-gold" id="spec-roast">Medium Level</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-cream/40">Bean Variety:</span>
+                                    <span>Ethiopian Heirloom Arabica</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-cream/40">Bag Net Weight:</span>
+                                    <span id="spec-weight">1 Pound (16 OZ / 453g)</span>
+                                </div>
+                                <div class="flex justify-between" id="distribution-meta">
+                                    <span class="text-cream/40">Distributed By:</span>
+                                    <span>Kolobo Coffee LLC</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Selector Switches -->
+                        <div class="grid grid-cols-2 gap-4 mt-8">
+                            <button onclick="switchSticker('front')" id="btn-sticker-front" class="bg-gold text-espresso text-xs font-semibold uppercase tracking-wider py-3 rounded-sm transition duration-300 text-center">
+                                Front Sticker
+                            </button>
+                            <button onclick="switchSticker('back')" id="btn-sticker-back" class="border border-white/20 hover:border-gold text-cream text-xs font-semibold uppercase tracking-wider py-3 rounded-sm transition duration-300 text-center">
+                                Back Sticker
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Direct Callout for Stickers -->
+                    <div class="flex items-start gap-4 p-4 bg-clay/10 border border-clay/20 rounded-sm">
+                        <i data-lucide="info" class="w-6 h-6 text-gold shrink-0 mt-0.5"></i>
+                        <p class="text-xs text-sand/80 font-light leading-relaxed">
+                            Our stickers confirm complete roasting execution by <em>Morning Aroma Coffee</em> (Roseville, MD) and official distribution compliance managed directly from St. Paul, Minnesota.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Live Sticker Visual Renderer (Right) -->
+                <div class="lg:col-span-7 flex justify-center">
+                    <div class="relative bg-stone-900 border border-gold/10 p-4 rounded-sm shadow-2xl max-w-md w-full aspect-[2/3] flex items-center justify-center overflow-hidden group">
+                        
+                        <!-- Visual referencing verbatim: Front Sticker Final-1.jpg & Back Sticker Final-1.jpg -->
+                        <img id="sticker-inspector-img" src="Front Sticker Final-1.jpg" alt="Kolobo Coffee Official Sticker Design" class="max-h-[550px] w-auto object-contain transition-all duration-500 ease-in-out group-hover:scale-102">
+                        
+                        <div class="absolute bottom-4 left-4 right-4 bg-espresso/90 border border-white/10 backdrop-blur-md p-3 text-center text-[10px] tracking-widest text-gold uppercase">
+                            Hover to magnify physical design values
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Ethiopia Micro-Regions Map Section -->
+    <section id="origin-explorer" class="py-24 bg-cream text-espresso relative overflow-hidden border-b border-espresso/10">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+            <!-- Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-[0.35em] text-clay font-semibold block mb-2">TERROIR SPECIMEN HUB</span>
+                <h2 class="font-serif text-3xl md:text-5xl font-light leading-tight text-espresso">Interactive Ethiopia Micro-Region Explorer</h2>
+                <p class="text-espresso/60 text-xs md:text-sm mt-4 font-light leading-relaxed">
+                    Click on the highlighted coffee zones below to analyze their altitude parameters, sensory properties, and current premium harvest availability.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Map Area -->
+                <div class="lg:col-span-7 flex justify-center relative bg-white border border-espresso/10 rounded-sm p-6 shadow-sm">
+                    <!-- Stylized SVG Map of Ethiopia with Highlighted Coffee Zones -->
+                    <svg class="w-full max-w-[550px] h-auto drop-shadow-[0_10px_20px_rgba(0,0,0,0.1)]" viewBox="0 0 600 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g opacity="0.1">
+                            <line x1="10" y1="50" x2="590" y2="50" stroke="#12110E" stroke-width="0.5" stroke-dasharray="2 4"/>
+                            <line x1="10" y1="150" x2="590" y2="150" stroke="#12110E" stroke-width="0.5" stroke-dasharray="2 4"/>
+                            <line x1="10" y1="250" x2="590" y2="250" stroke="#12110E" stroke-width="0.5" stroke-dasharray="2 4"/>
+                            <line x1="10" y1="350" x2="590" y2="350" stroke="#12110E" stroke-width="0.5" stroke-dasharray="2 4"/>
+                        </g>
+
+                        <!-- Ethiopia Abstract Outline Polyline -->
+                        <path d="M 120 180 L 150 110 L 220 70 L 310 60 L 410 100 L 460 160 L 530 200 L 550 240 L 500 290 L 450 320 L 390 390 L 330 410 L 250 370 L 200 370 L 170 340 L 140 290 L 110 230 Z" 
+                              fill="none" stroke="#9E7B54" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.6"/>
+
+                        <!-- Major Coffee Growing Zones / Interactive Nodes -->
+                        <!-- Guji Node -->
+                        <g class="region-node cursor-pointer group" onclick="selectRegion('guji')">
+                            <circle cx="280" cy="300" r="16" fill="#B85C38" fill-opacity="0.15" class="transition group-hover:fill-opacity-30 duration-300"/>
+                            <circle cx="280" cy="300" r="6" fill="#B85C38" class="animate-pulse origin-center scale-110"/>
+                            <text x="290" y="320" fill="#12110E" font-size="11" letter-spacing="1" font-weight="600">Guji</text>
+                        </g>
+
+                        <!-- Yirgacheffe Node -->
+                        <g class="region-node cursor-pointer group" onclick="selectRegion('yirgacheffe')">
+                            <circle cx="240" cy="270" r="16" fill="#C5A880" fill-opacity="0.15" class="transition group-hover:fill-opacity-30 duration-300"/>
+                            <circle cx="240" cy="270" r="6" fill="#C5A880" class="animate-pulse"/>
+                            <text x="175" y="275" fill="#12110E" font-size="11" letter-spacing="1" font-weight="600">Yirgacheffe</text>
+                        </g>
+
+                        <!-- Sidama Node -->
+                        <g class="region-node cursor-pointer group" onclick="selectRegion('sidama')">
+                            <circle cx="295" cy="250" r="16" fill="#C5A880" fill-opacity="0.15" class="transition group-hover:fill-opacity-30 duration-300"/>
+                            <circle cx="295" cy="250" r="6" fill="#C5A880" class="animate-pulse"/>
+                            <text x="310" y="255" fill="#12110E" font-size="11" letter-spacing="1" font-weight="600">Sidama</text>
+                        </g>
+
+                        <!-- Jimma Node -->
+                        <g class="region-node cursor-pointer group" onclick="selectRegion('jimma')">
+                            <circle cx="190" cy="230" r="16" fill="#C5A880" fill-opacity="0.15" class="transition group-hover:fill-opacity-30 duration-300"/>
+                            <circle cx="190" cy="230" r="6" fill="#C5A880" class="animate-pulse"/>
+                            <text x="145" y="215" fill="#12110E" font-size="11" letter-spacing="1" font-weight="600">Jimma/Limu</text>
+                        </g>
+
+                        <!-- Harrar Node -->
+                        <g class="region-node cursor-pointer group" onclick="selectRegion('harrar')">
+                            <circle cx="390" cy="170" r="16" fill="#C5A880" fill-opacity="0.15" class="transition group-hover:fill-opacity-30 duration-300"/>
+                            <circle cx="390" cy="170" r="6" fill="#C5A880" class="animate-pulse"/>
+                            <text x="405" y="175" fill="#12110E" font-size="11" letter-spacing="1" font-weight="600">Harrar</text>
+                        </g>
+                    </svg>
+                    <!-- Small absolute label of map instructions -->
+                    <div class="absolute bottom-4 left-4 flex items-center gap-2 text-xs text-espresso/50">
+                        <i data-lucide="info" class="w-4 h-4 text-gold"></i>
+                        <span>Click interactive node to inspect regional profile</span>
+                    </div>
+                </div>
+
+                <!-- Region Specimen Card -->
+                <div class="lg:col-span-5">
+                    <div id="region-specimen-box" class="bg-white border border-espresso/10 p-8 rounded-sm shadow-sm transition-all duration-500">
+                        <div class="flex items-center justify-between mb-6 pb-4 border-b border-espresso/10">
+                            <div>
+                                <span class="text-[10px] uppercase tracking-widest text-clay block" id="region-vintage">HARVEST YEAR 2026</span>
+                                <h3 class="font-serif text-3xl font-normal text-espresso" id="region-title">Yirgacheffe</h3>
+                            </div>
+                            <span class="text-sm px-3 py-1 bg-gold/10 text-goldDark border border-gold/20 rounded-sm" id="region-altitude">1,900m - 2,200m</span>
+                        </div>
+
+                        <!-- Soil, Temp, Profile grid -->
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <div class="bg-cream p-3 rounded-sm border border-espresso/5">
+                                <span class="text-[10px] text-espresso/40 block uppercase tracking-wider">Common Processing</span>
+                                <span class="text-xs text-espresso font-medium block mt-1" id="region-process">Fully Washed / Double Fermentation</span>
+                            </div>
+                            <div class="bg-cream p-3 rounded-sm border border-espresso/5">
+                                <span class="text-[10px] text-espresso/40 block uppercase tracking-wider">Average Cup Rating</span>
+                                <span class="text-xs text-goldDark font-bold block mt-1" id="region-score">87.5 SCA Score</span>
+                            </div>
+                        </div>
+
+                        <!-- Sensory Notes Description -->
+                        <div class="mb-6">
+                            <span class="text-[10px] text-espresso/40 block uppercase tracking-wider mb-2">Primary Sensory Profile</span>
+                            <p class="text-espresso/75 text-xs md:text-sm font-light leading-relaxed" id="region-description">
+                                Exceedingly bright, floral, complex profile. Dominated by pristine jasmine aroma, black tea body, and vivid bergamot and candied lemon citrus notes. High clarity.
+                            </p>
+                        </div>
+
+                        <!-- Key Varietals -->
+                        <div class="mb-8">
+                            <span class="text-[10px] text-espresso/40 block uppercase tracking-wider mb-2">Key Varietals Sourced</span>
+                            <div class="flex flex-wrap gap-2" id="region-varietals">
+                                <span class="px-2.5 py-1 bg-cream border border-espresso/10 text-[10px] tracking-wider text-espresso/80 uppercase rounded-sm">Indigenous Heirlooms</span>
+                                <span class="px-2.5 py-1 bg-cream border border-espresso/10 text-[10px] tracking-wider text-espresso/80 uppercase rounded-sm">Kuria</span>
+                                <span class="px-2.5 py-1 bg-cream border border-espresso/10 text-[10px] tracking-wider text-espresso/80 uppercase rounded-sm">Wolisha</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <button onclick="filterCatalogByRegion()" class="flex-1 bg-gold hover:bg-espresso hover:text-cream text-espresso text-xs font-semibold uppercase tracking-wider py-3 px-4 rounded-sm transition duration-300 text-center">
+                                View Current Lots
+                            </button>
+                            <a href="#b2b-portal" class="text-espresso hover:text-goldDark text-xs uppercase tracking-wider flex items-center gap-1.5 transition duration-300 font-medium whitespace-nowrap">
+                                Request Samples <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlands Terroir Visual Gallery -->
+    <section id="gallery" class="py-24 bg-espresso text-cream relative overflow-hidden border-t border-gold/10">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-[0.35em] text-gold font-semibold block mb-2">Visual Narrative</span>
+                <h2 class="font-serif text-3xl md:text-5xl font-light leading-tight">Authentic Brand Gallery</h2>
+                <p class="text-sand/60 text-xs md:text-sm mt-4 font-light leading-relaxed">
+                    Examine the tactile details of our premium offerings. Click on any frame to preview the high-resolution artwork, official packaging stickers, and heritage emblems.
+                </p>
+            </div>
+
+            <!-- Mosaic Grid of the 4 verified Kollobo Coffee assets -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Image Card 1: Bag Mockup -->
+                <div class="relative overflow-hidden group rounded-sm cursor-pointer border border-white/5 bg-stone-900 shadow-lg hover:border-gold/30 transition-all duration-500" onclick="openLightbox('IMG-20260110-WA0015.jpg', 'Kollobo Premium Roasted Coffee Bag Mockup')">
+                    <div class="aspect-[3/4] overflow-hidden relative">
+                        <img src="IMG-20260110-WA0015.jpg" alt="Kollobo Premium Roasted Coffee Bag Mockup" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter brightness-95">
+                        <div class="absolute inset-0 bg-gradient-to-t from-espresso via-transparent to-transparent opacity-80 z-10"></div>
+                    </div>
+                    <div class="absolute bottom-4 left-4 right-4 z-20">
+                        <span class="text-[9px] uppercase tracking-widest text-gold block mb-1">Product Showcase</span>
+                        <h4 class="font-serif text-lg font-normal text-cream group-hover:text-gold transition-colors duration-300">1 Pound Roasted Bag</h4>
+                    </div>
+                </div>
+
+                <!-- Image Card 2: Imperial Seal -->
+                <div class="relative overflow-hidden group rounded-sm cursor-pointer border border-white/5 bg-stone-900 shadow-lg hover:border-gold/30 transition-all duration-500" onclick="openLightbox('IMG-20251220-WA0013.jpg', 'Kollobo Coffee Jeweled Imperial Seal')">
+                    <div class="aspect-[3/4] overflow-hidden relative">
+                        <img src="IMG-20251220-WA0013.jpg" alt="Kollobo Coffee Jeweled Imperial Seal" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter brightness-95">
+                        <div class="absolute inset-0 bg-gradient-to-t from-espresso via-transparent to-transparent opacity-80 z-10"></div>
+                    </div>
+                    <div class="absolute bottom-4 left-4 right-4 z-20">
+                        <span class="text-[9px] uppercase tracking-widest text-gold block mb-1">Corporate Crest</span>
+                        <h4 class="font-serif text-lg font-normal text-cream group-hover:text-gold transition-colors duration-300">Imperial Heritage Mark</h4>
+                    </div>
+                </div>
+
+                <!-- Image Card 3: Front Sticker -->
+                <div class="relative overflow-hidden group rounded-sm cursor-pointer border border-white/5 bg-stone-900 shadow-lg hover:border-gold/30 transition-all duration-500" onclick="openLightbox('Front Sticker Final-1.jpg', 'Official Kollobo Coffee Front Packaging Label')">
+                    <div class="aspect-[3/4] overflow-hidden relative">
+                        <img src="Front Sticker Final-1.jpg" alt="Official Kollobo Coffee Front Packaging Label" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter brightness-95">
+                        <div class="absolute inset-0 bg-gradient-to-t from-espresso via-transparent to-transparent opacity-80 z-10"></div>
+                    </div>
+                    <div class="absolute bottom-4 left-4 right-4 z-20">
+                        <span class="text-[9px] uppercase tracking-widest text-gold block mb-1">Sticker Specifications</span>
+                        <h4 class="font-serif text-lg font-normal text-cream group-hover:text-gold transition-colors duration-300">Front Label Layout</h4>
+                    </div>
+                </div>
+
+                <!-- Image Card 4: Back Sticker -->
+                <div class="relative overflow-hidden group rounded-sm cursor-pointer border border-white/5 bg-stone-900 shadow-lg hover:border-gold/30 transition-all duration-500" onclick="openLightbox('Back Sticker Final-1.jpg', 'Official Kollobo Coffee Back Compliance Label')">
+                    <div class="aspect-[3/4] overflow-hidden relative">
+                        <img src="Back Sticker Final-1.jpg" alt="Official Kollobo Coffee Back Compliance Label" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter brightness-95">
+                        <div class="absolute inset-0 bg-gradient-to-t from-espresso via-transparent to-transparent opacity-80 z-10"></div>
+                    </div>
+                    <div class="absolute bottom-4 left-4 right-4 z-20">
+                        <span class="text-[9px] uppercase tracking-widest text-gold block mb-1">Sticker Specifications</span>
+                        <h4 class="font-serif text-lg font-normal text-cream group-hover:text-gold transition-colors duration-300">Back Compliance Layout</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Image Lightbox Modal Overlay -->
+    <div id="lightbox-modal" class="fixed inset-0 bg-espresso/95 backdrop-blur-md z-50 flex flex-col justify-center items-center p-4 hidden opacity-0 transition-opacity duration-300" onclick="closeLightbox()">
+        <button class="absolute top-6 right-6 text-cream hover:text-gold transition">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+        <div class="max-w-4xl max-h-[80vh] overflow-hidden rounded-sm relative border border-white/10" onclick="event.stopPropagation()">
+            <img id="lightbox-img" src="" alt="" class="w-full h-auto max-h-[75vh] object-contain mx-auto">
+            <div class="absolute bottom-0 left-0 right-0 bg-espresso/80 border-t border-white/5 p-4 text-center">
+                <p id="lightbox-caption" class="font-serif text-lg text-cream"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Green Coffee Lots Catalog -->
+    <section id="catalog" class="py-24 bg-cream relative overflow-hidden grain-bg">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+            <!-- Header section -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+                <div>
+                    <span class="text-xs uppercase tracking-[0.3em] text-clay font-semibold block mb-2">HARVEST PORTFOLIO</span>
+                    <h2 class="font-serif text-3xl md:text-5xl font-light text-espresso">Available Green Lots</h2>
+                    <p class="text-espresso/60 text-xs md:text-sm font-light mt-2">Filter and query by region, process style, or flavor descriptors.</p>
+                </div>
+                <!-- Mini search block -->
+                <div class="relative w-full max-w-sm">
+                    <input type="text" id="catalog-search" oninput="filterLots()" placeholder="Search lot ID, sensory keywords..." class="w-full bg-white border border-espresso/10 hover:border-gold/50 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold text-xs p-4 pr-12 text-espresso placeholder:text-espresso/40 rounded-sm shadow-sm transition-colors">
+                    <i data-lucide="search" class="w-4 h-4 text-espresso/40 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+                </div>
+            </div>
+
+            <!-- Filters Area -->
+            <div class="flex flex-wrap items-center gap-4 mb-10 pb-6 border-b border-espresso/15">
+                <!-- Region Filter -->
+                <div class="flex items-center gap-2">
+                    <span class="text-[10px] uppercase tracking-wider text-espresso/40">Region:</span>
+                    <select id="filter-region" onchange="filterLots()" class="bg-white border border-espresso/10 text-xs p-2.5 rounded-sm focus:outline-none focus:border-gold">
+                        <option value="all">All Regions</option>
+                        <option value="yirgacheffe">Yirgacheffe</option>
+                        <option value="guji">Guji</option>
+                        <option value="sidama">Sidama</option>
+                        <option value="jimma">Jimma/Limu</option>
+                        <option value="harrar">Harrar</option>
+                    </select>
+                </div>
+
+                <!-- Process Filter -->
+                <div class="flex items-center gap-2">
+                    <span class="text-[10px] uppercase tracking-wider text-espresso/40">Process:</span>
+                    <select id="filter-process" onchange="filterLots()" class="bg-white border border-espresso/10 text-xs p-2.5 rounded-sm focus:outline-none focus:border-gold">
+                        <option value="all">All Processes</option>
+                        <option value="washed">Fully Washed</option>
+                        <option value="natural">Natural</option>
+                        <option value="anaerobic">Anaerobic / Honey</option>
+                    </select>
+                </div>
+
+                <!-- Flavor Selector Buttons -->
+                <div class="flex items-center gap-2 flex-wrap">
+                    <span class="text-[10px] uppercase tracking-wider text-espresso/40">Descriptor:</span>
+                    <button onclick="toggleFlavorFilter('Floral')" class="flavor-btn px-3 py-1.5 rounded-full border border-espresso/10 text-xs hover:border-gold hover:text-gold transition duration-300 bg-white" data-flavor="Floral">Floral</button>
+                    <button onclick="toggleFlavorFilter('Citrus')" class="flavor-btn px-3 py-1.5 rounded-full border border-espresso/10 text-xs hover:border-gold hover:text-gold transition duration-300 bg-white" data-flavor="Citrus">Citrus</button>
+                    <button onclick="toggleFlavorFilter('Berry')" class="flavor-btn px-3 py-1.5 rounded-full border border-espresso/10 text-xs hover:border-gold hover:text-gold transition duration-300 bg-white" data-flavor="Berry">Berry</button>
+                    <button onclick="toggleFlavorFilter('Chocolate')" class="flavor-btn px-3 py-1.5 rounded-full border border-espresso/10 text-xs hover:border-gold hover:text-gold transition duration-300 bg-white" data-flavor="Chocolate">Chocolate</button>
+                </div>
+
+                <!-- Reset button -->
+                <button onclick="resetFilters()" class="text-[10px] uppercase tracking-widest text-clay hover:text-espresso transition duration-300 ml-auto font-semibold">
+                    Clear Filters
+                </button>
+            </div>
+
+            <!-- Lots Grid -->
+            <div id="lots-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Dynamically Sourced Cards via JS (reusing packaging images) -->
+            </div>
+
+            <!-- Empty State -->
+            <div id="empty-state" class="hidden text-center py-16 bg-white border border-gold/10 rounded-sm">
+                <i data-lucide="coffee" class="w-12 h-12 text-espresso/20 mx-auto mb-4"></i>
+                <h4 class="font-serif text-xl font-medium text-espresso">No micro-lots match your search profile</h4>
+                <p class="text-espresso/60 text-xs mt-2 font-light">Try adjusting your filters, region selector, or look up our general catalog.</p>
+                <button onclick="resetFilters()" class="mt-4 bg-espresso text-cream hover:bg-gold hover:text-espresso transition duration-300 text-xs uppercase tracking-wider py-2.5 px-6 rounded-sm">Reset Sourcing Filters</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lot Specimen Detail Modal -->
+    <div id="lot-modal" class="fixed inset-0 z-50 bg-espresso/80 backdrop-blur-sm flex items-center justify-center p-4 hidden opacity-0 transition-opacity duration-300 ease-out">
+        <div class="bg-cream text-espresso w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-sm shadow-2xl relative border border-gold/20 flex flex-col md:flex-row">
+            <!-- Left Side: Interactive Specs & Grading Sheet -->
+            <div class="md:w-1/2 p-8 border-b md:border-b-0 md:border-r border-espresso/10">
+                <span class="text-[10px] uppercase tracking-widest text-clay block mb-1">OFFICIAL CERTIFIED SPECIMEN</span>
+                <h3 id="modal-lot-id" class="text-lg font-bold tracking-widest text-espresso mb-4">LOT #042</h3>
+                
+                <h2 id="modal-title" class="font-serif text-3xl font-light text-espresso mb-1">Guji Uraga Natural G1</h2>
+                <span id="modal-origin" class="text-xs uppercase tracking-wider text-gold font-semibold block mb-6">GUJI ZONE, URAGA VILLAGE</span>
+
+                <!-- Sensory breakdown meter -->
+                <div class="space-y-4 mb-6">
+                    <h4 class="text-xs uppercase tracking-wider text-espresso/40 font-semibold border-b border-espresso/5 pb-2">Grading Breakdown (SCA Sheet)</h4>
+                    <div>
+                        <div class="flex justify-between text-xs mb-1">
+                            <span>Acidity</span>
+                            <span id="score-acidity" class="font-bold">8.75 / 10</span>
+                        </div>
+                        <div class="w-full bg-espresso/5 h-1.5 rounded-full overflow-hidden">
+                            <div id="bar-acidity" class="bg-gold h-full" style="width: 87.5%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-xs mb-1">
+                            <span>Sweetness</span>
+                            <span id="score-sweetness" class="font-bold">9.00 / 10</span>
+                        </div>
+                        <div class="w-full bg-espresso/5 h-1.5 rounded-full overflow-hidden">
+                            <div id="bar-sweetness" class="bg-gold h-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-xs mb-1">
+                            <span>Body / Mouthfeel</span>
+                            <span id="score-body" class="font-bold">8.50 / 10</span>
+                        </div>
+                        <div class="w-full bg-espresso/5 h-1.5 rounded-full overflow-hidden">
+                            <div id="bar-body" class="bg-gold h-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-xs mb-1">
+                            <span>Clarity</span>
+                            <span id="score-clarity" class="font-bold">8.75 / 10</span>
+                        </div>
+                        <div class="w-full bg-espresso/5 h-1.5 rounded-full overflow-hidden">
+                            <div id="bar-clarity" class="bg-gold h-full" style="width: 87.5%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Final SCA Score Badge -->
+                <div class="bg-espresso text-cream p-4 rounded-sm flex items-center justify-between">
+                    <div>
+                        <span class="text-[9px] uppercase tracking-widest text-gold block">Official Sensory Score</span>
+                        <span class="text-xs text-cream/80 font-light">Authorized Q-Grader Grading</span>
+                    </div>
+                    <span id="modal-sca-score" class="text-3xl font-serif font-bold text-gold">88.5</span>
+                </div>
+            </div>
+
+            <!-- Right Side: Logistics & Sample Actions -->
+            <div class="md:w-1/2 p-8 flex flex-col justify-between bg-white/50 relative">
+                <button onclick="closeLotModal()" class="absolute top-4 right-4 text-espresso/60 hover:text-espresso transition duration-300">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+
+                <div class="space-y-6">
+                    <h4 class="text-xs uppercase tracking-wider text-espresso/40 font-semibold border-b border-espresso/5 pb-2">Batch Parameters</h4>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <span class="text-[10px] text-espresso/40 block uppercase tracking-wider">Altitude</span>
+                            <span id="modal-altitude" class="text-xs text-espresso font-medium block mt-0.5">2,050m</span>
+                        </div>
+                        <div>
+                            <span class="text-[10px] text-espresso/40 block uppercase tracking-wider">Moisture Content</span>
+                            <span id="modal-moisture" class="text-xs text-espresso font-medium block mt-0.5">10.8%</span>
+                        </div>
+                        <div>
+                            <span class="text-[10px] text-espresso/40 block uppercase tracking-wider">Water Activity</span>
+                            <span id="modal-water-act" class="text-xs text-espresso font-medium block mt-0.5">0.52 aw</span>
+                        </div>
+                        <div>
+                            <span class="text-[10px] text-espresso/40 block uppercase tracking-wider">Available Inventory</span>
+                            <span id="modal-inventory" class="text-xs text-espresso font-medium block mt-0.5">18 Bags (GrainPro)</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <span class="text-[10px] text-espresso/40 block uppercase tracking-wider mb-1">Aromatics & Sensory Notes</span>
+                        <p id="modal-flavor-desc" class="text-xs text-espresso/80 font-light leading-relaxed">
+                            Rich jasmine blossom, heavy peach syrup, complex sweet bergamot with balanced white wine acidity. Velvet mouthfeel.
+                        </p>
+                    </div>
+
+                    <div class="bg-cream border border-gold/20 p-4 rounded-sm">
+                        <span class="text-[10px] text-clay block font-semibold uppercase tracking-wider mb-1">Logistics Warehouse Location</span>
+                        <span id="modal-warehouse" class="text-xs text-espresso/80 font-light block">Trieste Warehouse (EU Host / Ready to Release)</span>
+                    </div>
+                </div>
+
+                <div class="mt-8 flex flex-col gap-3">
+                    <button id="modal-sample-btn" onclick="requestSampleFromModal()" class="w-full bg-gold hover:bg-espresso hover:text-cream text-espresso text-xs font-semibold uppercase tracking-wider py-4 px-4 rounded-sm transition duration-300 text-center flex items-center justify-center gap-2">
+                        <i data-lucide="package" class="w-4 h-4"></i>
+                        Add Lot to Sample Request
+                    </button>
+                    <button onclick="closeLotModal()" class="w-full border border-espresso/15 hover:bg-espresso/5 text-espresso text-xs font-semibold uppercase tracking-wider py-3.5 px-4 rounded-sm transition duration-300 text-center">
+                        Back to Search
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Transparency Sourcing Steps Section -->
+    <section id="standards" class="py-24 bg-espresso text-cream relative overflow-hidden border-t border-b border-gold/10">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+            <!-- Header Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-16">
+                <div class="lg:col-span-6">
+                    <span class="text-xs uppercase tracking-[0.35em] text-gold font-semibold block mb-2">COMPREHENSIVE TRANSPARENCY</span>
+                    <h2 class="font-serif text-3xl md:text-5xl font-light leading-tight">
+                        Our Sourcing Craftsmanship Timeline
+                    </h2>
+                </div>
+                <div class="lg:col-span-6">
+                    <p class="text-sand/70 font-light text-xs md:text-sm leading-relaxed">
+                        Every single lot is systematically shepherded from high-altitude highlands to dry milling and container vacuum packaging, preserving flavor integrity.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Steps Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+                <!-- Decorative Connector Line for timeline -->
+                <div class="hidden md:block absolute top-[44px] left-[15%] right-[15%] h-[1px] bg-gold/10 z-0"></div>
+
+                <!-- Step 1 -->
+                <div class="relative z-10">
+                    <div class="w-12 h-12 rounded-full bg-espresso border border-gold/30 flex items-center justify-center text-gold mb-6 font-serif text-lg font-bold">01</div>
+                    <h3 class="font-serif text-xl font-normal text-cream mb-2">Direct farm selection</h3>
+                    <p class="text-sand/60 text-xs font-light leading-relaxed">
+                        We buy green coffee from smallholders, micro-lots and small washing station cooperatives in primary zones (Sidama, Guji, Yirgacheffe) at premium rates.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative z-10">
+                    <div class="w-12 h-12 rounded-full bg-espresso border border-gold/30 flex items-center justify-center text-gold mb-6 font-serif text-lg font-bold">02</div>
+                    <h3 class="font-serif text-xl font-normal text-cream mb-2">Strict Wet Milling</h3>
+                    <p class="text-sand/60 text-xs font-light leading-relaxed">
+                        Fermentation times are strictly tracked. Sorting tables remove defective cherries immediately. Drying is closely monitored on raised African beds.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative z-10">
+                    <div class="w-12 h-12 rounded-full bg-espresso border border-gold/30 flex items-center justify-center text-gold mb-6 font-serif text-lg font-bold">03</div>
+                    <h3 class="font-serif text-xl font-normal text-cream mb-2">Q-Grading & Specimen Sheet</h3>
+                    <p class="text-sand/60 text-xs font-light leading-relaxed">
+                        SCA cup profiles are verified before exporting. Moisture parameters must lock consistently between 10.5% - 11.5% with zero sensory flaws.
+                    </p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="relative z-10">
+                    <div class="w-12 h-12 rounded-full bg-espresso border border-gold/30 flex items-center justify-center text-gold mb-6 font-serif text-lg font-bold">04</div>
+                    <h3 class="font-serif text-xl font-normal text-cream mb-2">Cold-Chain Protection</h3>
+                    <p class="text-sand/60 text-xs font-light leading-relaxed">
+                        Packaged in GrainPro bags and locked in insulated containers, avoiding moisture shock and volatile compound loss during sea shipping.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- B2B Wholesale Portal / Sample Request Section -->
+    <section id="b2b-portal" class="py-24 bg-espresso text-cream relative overflow-hidden border-t border-gold/10">
+        <!-- Toast feedback element -->
+        <div id="toast" class="fixed bottom-6 right-6 bg-gold text-espresso text-xs font-semibold px-6 py-4 rounded-sm shadow-xl flex items-center gap-3 z-50 pointer-events-none opacity-0 transition-opacity duration-300">
+            <i data-lucide="check-circle" class="w-5 h-5 text-espresso"></i>
+            <span id="toast-message">Your sample request has been submitted successfully.</span>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <!-- Portal Info -->
+                <div class="lg:col-span-5">
+                    <span class="text-xs uppercase tracking-[0.35em] text-gold font-semibold block mb-2">PARTNERSHIP ENTRANCE</span>
+                    <h2 class="font-serif text-3xl md:text-5xl font-light leading-tight mb-6">Wholesale Sourcing Hub & Samples</h2>
+                    <p class="text-sand/60 text-xs md:text-sm font-light leading-relaxed mb-6">
+                        We ship physical 150g pre-shipment green coffee samples globally to commercial roasters. Fill out the application profile, specify your preferred coffee traits, and our logistics desk will arrange a flight dispatch.
+                    </p>
+
+                    <!-- Trust indicators inside dark form container -->
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3 text-xs text-sand/80">
+                            <i data-lucide="shield-check" class="w-5 h-5 text-gold shrink-0"></i>
+                            <span>Corporate Sourcing Integrity Assured</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-xs text-sand/80">
+                            <i data-lucide="truck" class="w-5 h-5 text-gold shrink-0"></i>
+                            <span>Global Shipping with Tracking Details</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-xs text-sand/80">
+                            <i data-lucide="flask" class="w-5 h-5 text-gold shrink-0"></i>
+                            <span>Traceable Origin & SCA Cupping Records Included</span>
+                        </div>
+                    </div>
+
+                    <!-- Selected Sample Basket Preview -->
+                    <div class="mt-8 pt-6 border-t border-white/10">
+                        <h4 class="text-xs uppercase tracking-wider text-gold mb-3 flex items-center justify-between">
+                            Selected Sample Cart
+                            <span id="selected-count" class="bg-gold/10 text-gold px-2 py-0.5 rounded-full text-[10px] font-normal">0 Selected</span>
+                        </h4>
+                        <ul id="sample-basket" class="space-y-2 text-xs text-sand/60">
+                            <!-- Populated dynamically via JS -->
+                            <li class="italic text-cream/40" id="basket-empty-state">No lots selected. Click "Add to Samples" on lots to include specimens.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Form Card -->
+                <div class="lg:col-span-7 bg-white/5 border border-white/10 backdrop-blur-md p-8 md:p-10 rounded-sm">
+                    <form id="sample-request-form" onsubmit="submitForm(event)" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Name -->
+                            <div class="space-y-2">
+                                <label for="form-name" class="text-[10px] uppercase tracking-wider text-cream/60">Primary Contact Name *</label>
+                                <input type="text" id="form-name" required class="w-full bg-white/5 border border-white/10 hover:border-gold/50 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold text-xs p-3.5 text-cream rounded-sm">
+                            </div>
+
+                            <!-- Roastery -->
+                            <div class="space-y-2">
+                                <label for="form-company" class="text-[10px] uppercase tracking-wider text-cream/60">Roastery / Company Name *</label>
+                                <input type="text" id="form-company" required class="w-full bg-white/5 border border-white/10 hover:border-gold/50 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold text-xs p-3.5 text-cream rounded-sm">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Email -->
+                            <div class="space-y-2">
+                                <label for="form-email" class="text-[10px] uppercase tracking-wider text-cream/60">Corporate Email Address *</label>
+                                <input type="email" id="form-email" required class="w-full bg-white/5 border border-white/10 hover:border-gold/50 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold text-xs p-3.5 text-cream rounded-sm">
+                            </div>
+
+                            <!-- Phone -->
+                            <div class="space-y-2">
+                                <label for="form-phone" class="text-[10px] uppercase tracking-wider text-cream/60">Contact Number</label>
+                                <input type="tel" id="form-phone" class="w-full bg-white/5 border border-white/10 hover:border-gold/50 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold text-xs p-3.5 text-cream rounded-sm">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Volume Sourced -->
+                            <div class="space-y-2">
+                                <label for="form-volume" class="text-[10px] uppercase tracking-wider text-cream/60">Estimated Green Volume *</label>
+                                <select id="form-volume" required class="w-full bg-white/5 border border-white/10 hover:border-gold/50 focus:border-gold focus:outline-none text-xs p-3.5 text-cream rounded-sm">
+                                    <option value="" class="bg-espresso text-cream">Select volume...</option>
+                                    <option value="micro" class="bg-espresso text-cream">&lt; 10 Bags / Month</option>
+                                    <option value="medium" class="bg-espresso text-cream">10 - 50 Bags / Month</option>
+                                    <option value="large" class="bg-espresso text-cream">50+ Bags / Month</option>
+                                    <option value="container" class="bg-espresso text-cream">Full Container Loads (FCL)</option>
+                                </select>
+                            </div>
+
+                            <!-- Target Flavor Focus -->
+                            <div class="space-y-2">
+                                <label for="form-profile" class="text-[10px] uppercase tracking-wider text-cream/60">Primary Flavor Goal</label>
+                                <select id="form-profile" class="w-full bg-white/5 border border-white/10 hover:border-gold/50 focus:border-gold focus:outline-none text-xs p-3.5 text-cream rounded-sm">
+                                    <option value="floral-tea" class="bg-espresso text-cream">High-clarity floral & tea-like</option>
+                                    <option value="jammy-fruity" class="bg-espresso text-cream">Heavy body natural & fruity</option>
+                                    <option value="chocolate-sweet" class="bg-espresso text-cream">Muted chocolate & high sweetness</option>
+                                    <option value="experimental" class="bg-espresso text-cream">Experimental anaerobic lots</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Shipping Address -->
+                        <div class="space-y-2">
+                            <label for="form-address" class="text-[10px] uppercase tracking-wider text-cream/60">Shipping Destination / Address *</label>
+                            <input type="text" id="form-address" required placeholder="Street Address, City, State, ZIP, Country" class="w-full bg-white/5 border border-white/10 hover:border-gold/50 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold text-xs p-3.5 text-cream placeholder:text-cream/20 rounded-sm">
+                        </div>
+
+                        <!-- Special inquiries -->
+                        <div class="space-y-2">
+                            <label for="form-notes" class="text-[10px] uppercase tracking-wider text-cream/60">Sourcing Details / Custom Requests</label>
+                            <textarea id="form-notes" rows="4" placeholder="Enter special requests, preferred wet mills, target price parameters..." class="w-full bg-white/5 border border-white/10 hover:border-gold/50 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold text-xs p-3.5 text-cream placeholder:text-cream/20 rounded-sm resize-none"></textarea>
+                        </div>
+
+                        <!-- Submit button -->
+                        <button type="submit" class="w-full bg-gold hover:bg-cream hover:text-espresso text-espresso text-xs font-bold uppercase tracking-[0.2em] py-4 rounded-sm transition duration-300">
+                            Submit Sourcing Request
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Footer -->
+    <footer class="bg-espresso text-cream py-16 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <!-- Brand details -->
+                <div class="md:col-span-1 space-y-4">
+                    <a href="#" class="font-serif text-2xl font-semibold tracking-[0.15em] text-cream">KOLOBO</a>
+                    <p class="text-sand/50 text-xs font-light leading-relaxed">
+                        Sourcing, evaluating, and importing premium, traceable, direct-trade green and roasted coffee from Ethiopia's legendary micro-regions.
+                    </p>
+                    <div class="flex items-center gap-4 text-gold pt-2">
+                        <a href="#" class="hover:text-white transition duration-300"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                        <a href="#" class="hover:text-white transition duration-300"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+                        <a href="#" class="hover:text-white transition duration-300"><i data-lucide="twitter" class="w-4 h-4"></i></a>
+                    </div>
+                </div>
+
+                <!-- Regions Links -->
+                <div class="md:col-span-1 space-y-4">
+                    <h4 class="font-serif text-lg text-gold font-normal">Sourcing Territories</h4>
+                    <ul class="space-y-2 text-xs text-sand/60">
+                        <li><a href="#origin-explorer" onclick="selectRegion('yirgacheffe')" class="hover:text-gold transition duration-300">Yirgacheffe Micro-lots</a></li>
+                        <li><a href="#origin-explorer" onclick="selectRegion('guji')" class="hover:text-gold transition duration-300">Guji Terranes</a></li>
+                        <li><a href="#origin-explorer" onclick="selectRegion('sidama')" class="hover:text-gold transition duration-300">Sidama Highlands</a></li>
+                        <li><a href="#origin-explorer" onclick="selectRegion('jimma')" class="hover:text-gold transition duration-300">Jimma / Limu Washed</a></li>
+                    </ul>
+                </div>
+
+                <!-- Global Office Links -->
+                <div class="md:col-span-1 space-y-4">
+                    <h4 class="font-serif text-lg text-gold font-normal">Global Offices</h4>
+                    <ul class="space-y-2 text-xs text-sand/60">
+                        <li>Sourcing: Addis Ababa, Ethiopia</li>
+                        <li>HQ: St. Paul, Minnesota, USA</li>
+                        <li>Roasting Facility: Roseville, MD, USA</li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter / Harvest update -->
+                <div class="md:col-span-1 space-y-4">
+                    <h4 class="font-serif text-lg text-gold font-normal">Join Sourcing Dispatch</h4>
+                    <p class="text-sand/50 text-xs font-light leading-relaxed">
+                        Receive monthly green availability lot spreadsheets, dry mill updates, and pre-harvest allocations.
+                    </p>
+                    <form onsubmit="subscribeNewsletter(event)" class="relative">
+                        <input type="email" id="newsletter-email" required placeholder="Company Email" class="w-full bg-white/5 border border-white/10 hover:border-gold/50 focus:border-gold focus:outline-none text-xs p-3 pr-10 text-cream placeholder:text-cream/20 rounded-sm">
+                        <button type="submit" class="absolute right-2 top-1/2 -translate-y-1/2 text-gold hover:text-white transition duration-300">
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 pt-8 border-t border-white/5 text-[10px] tracking-wider text-sand/40 uppercase">
+                <span>&copy; 2026 Kollobo Coffee. Sourcing with Transparency.</span>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#" class="hover:text-gold transition duration-300">Traceability Agreement</a>
+                    <span>•</span>
+                    <a href="#" class="hover:text-gold transition duration-300">Terms of Direct-Trade</a>
+                    <span>•</span>
+                    <a href="#" class="hover:text-gold transition duration-300">B2B Compliance Policies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Database of available green lots using only verified assets for visual parameters
+        const COFFEE_LOTS = [
+            {
+                id: "LOT-042",
+                title: "Uraga Natural G1 Micro-lot",
+                region: "guji",
+                regionLabel: "Guji Zone, Uraga",
+                process: "natural",
+                processLabel: "Natural Process",
+                elevation: "2,050m - 2,180m",
+                scaScore: "88.5",
+                flavors: ["Berry", "Floral", "Stone Fruit"],
+                flavorNotes: "Rich jasmine flower, sweet strawberry syrup, red grape with distinct heavy peach clarity.",
+                moisture: "10.8%",
+                waterActivity: "0.52 aw",
+                inventory: "14 Bags left",
+                warehouse: "Rotterdam Host Spot Stock",
+                img: "IMG-20260110-WA0015.jpg"
+            },
+            {
+                id: "LOT-057",
+                title: "Konga Washed Specimen Grade 1",
+                region: "yirgacheffe",
+                regionLabel: "Yirgacheffe, Konga Cooperatives",
+                process: "washed",
+                processLabel: "Fully Washed",
+                elevation: "1,950m - 2,100m",
+                scaScore: "87.75",
+                flavors: ["Citrus", "Floral", "Bergamot"],
+                flavorNotes: "Clean elderflower, key lime blossom, delicate black tea body, elegant honeydew finish.",
+                moisture: "11.1%",
+                waterActivity: "0.54 aw",
+                inventory: "28 Bags left",
+                warehouse: "Houston Warehouse (Cleared)",
+                img: "Front Sticker Final-1.jpg"
+            },
+            {
+                id: "LOT-061",
+                title: "Shantawene Anaerobic Double-Ferm",
+                region: "sidama",
+                regionLabel: "Sidama, Bensa Village",
+                process: "anaerobic",
+                processLabel: "Anaerobic Fermented Natural",
+                elevation: "2,150m - 2,220m",
+                scaScore: "89.25",
+                flavors: ["Berry", "Chocolate", "Complex Wine"],
+                flavorNotes: "Boozy blueberry syrup, dark chocolate ganache, cinnamon glaze with strong tropical fruit depth.",
+                moisture: "10.5%",
+                waterActivity: "0.49 aw",
+                inventory: "8 Bags left",
+                warehouse: "Rotterdam Host Spot Stock",
+                img: "Back Sticker Final-1.jpg"
+            },
+            {
+                id: "LOT-073",
+                title: "Heirloom Specialty Roasted",
+                region: "yirgacheffe",
+                regionLabel: "Yirgacheffe Highlands",
+                process: "natural",
+                processLabel: "Natural Process",
+                elevation: "1,900m - 2,050m",
+                scaScore: "86.5",
+                flavors: ["Berry", "Citrus", "Stone Fruit"],
+                flavorNotes: "Juicy raspberry jam, mandarin citrus brightness, velvety apricot nectar mouthfeel.",
+                moisture: "10.9%",
+                waterActivity: "0.51 aw",
+                inventory: "22 Bags left",
+                warehouse: "Houston Warehouse (Cleared)",
+                img: "IMG-20251220-WA0013.jpg"
+            }
+        ];
+
+        // Region-specific data profiles for interactive map
+        const REGIONS_DATA = {
+            guji: {
+                title: "Guji Zone",
+                vintage: "HARVEST YEAR 2026",
+                elevation: "1,900m - 2,300m",
+                process: "Natural, Honey & Anaerobic micro-lots",
+                score: "87.5 - 89.5 SCA Score",
+                description: "Deep, dense forests yield coffees with profound complexity. Recognized for incredibly juicy berry aromatics, velvet body, and tropical, stone-fruit acid properties.",
+                varietals: ["Indigenous Heirlooms", "74110", "74112 Selection"]
+            },
+            yirgacheffe: {
+                title: "Yirgacheffe",
+                vintage: "HARVEST YEAR 2026",
+                elevation: "1,850m - 2,200m",
+                process: "Pristine Fully Washed / Double Soak",
+                score: "86.5 - 88.5 SCA Score",
+                description: "Exceedingly bright, floral, tea-like profile. Dominated by pristine jasmine blossom aroma, black tea body, and vivid bergamot and candied lemon citrus notes. High clarity.",
+                varietals: ["Kurume", "Dega", "Heirloom Forest Seeds"]
+            },
+            sidama: {
+                title: "Sidama",
+                vintage: "HARVEST YEAR 2026",
+                elevation: "1,500m - 2,200m",
+                process: "Fully Washed & Traditional Natural",
+                score: "86.0 - 89.0 SCA Score",
+                description: "Remarkably balanced cup quality. High concentration of citric sweetness, stone fruit descriptors (peaches and apricots), and a clean, lingering honey finish.",
+                varietals: ["Ensete Hybrids", "Traditional Heirlooms"]
+            },
+            jimma: {
+                title: "Jimma / Limu",
+                vintage: "HARVEST YEAR 2026",
+                elevation: "1,700m - 2,000m",
+                process: "Fully Washed & Wet Hulled Honey",
+                score: "85.5 - 87.0 SCA Score",
+                description: "Crisp, solid body with pleasant cocoa acidity and warm sweet parameters. Shows great resistance to transport moisture fatigue and remains consistent in blending profiles.",
+                varietals: ["Limu Heirlooms", "Kaffa Forest Wild Trees"]
+            },
+            harrar: {
+                title: "Harrar",
+                vintage: "HARVEST YEAR 2026",
+                elevation: "1,600m - 1,900m",
+                process: "Traditional Sun-Dried Naturals",
+                score: "85.0 - 86.5 SCA Score",
+                description: "The historical homeland of dry processed arabicas. Distinctive heavy body, wild dark chocolate complexity, dark forest berry flavors, and robust cardamon spice highlights.",
+                varietals: ["Mocha Heirloom", "Ancient Harar Forest Seedlings"]
+            }
+        };
+
+        // Selection / State trackers
+        let activeFlavorFilters = [];
+        let selectedSamples = [];
+
+        // DOM elements cache
+        const lotsGrid = document.getElementById('lots-grid');
+        const emptyState = document.getElementById('empty-state');
+        const regionSpecimenBox = document.getElementById('region-specimen-box');
+        const lotModal = document.getElementById('lot-modal');
+        const sampleBasket = document.getElementById('sample-basket');
+        const basketEmptyState = document.getElementById('basket-empty-state');
+        const selectedCount = document.getElementById('selected-count');
+
+        window.addEventListener('DOMContentLoaded', () => {
+            // Initiate Icons
+            lucide.createIcons();
+
+            // Populate lots catalog on load
+            renderLots(COFFEE_LOTS);
+
+            // Handle Header background transparency on scroll
+            const header = document.getElementById('main-header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.remove('bg-transparent', 'py-6');
+                    header.classList.add('bg-espresso', 'py-4', 'shadow-lg');
+                } else {
+                    header.classList.remove('bg-espresso', 'py-4', 'shadow-lg');
+                    header.classList.add('bg-transparent', 'py-6');
+                }
+            });
+
+            // Mobile Menu Drawer Control
+            const drawer = document.getElementById('mobile-drawer');
+            const drawerOpenBtn = document.getElementById('mobile-menu-toggle');
+            const drawerCloseBtn = document.getElementById('mobile-drawer-close');
+            const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+            const openDrawer = () => {
+                drawer.classList.remove('hidden');
+                setTimeout(() => {
+                    drawer.classList.remove('opacity-0');
+                    drawer.classList.add('opacity-100');
+                }, 10);
+            };
+
+            const closeDrawer = () => {
+                drawer.classList.remove('opacity-100');
+                drawer.classList.add('opacity-0');
+                setTimeout(() => {
+                    drawer.classList.add('hidden');
+                }, 300);
+            };
+
+            drawerOpenBtn.addEventListener('click', openDrawer);
+            drawerCloseBtn.addEventListener('click', closeDrawer);
+            mobileLinks.forEach(link => link.addEventListener('click', closeDrawer));
+        });
+
+        // Interactive Sticker Swapping
+        function switchSticker(side) {
+            const imgEl = document.getElementById('sticker-inspector-img');
+            const titleEl = document.getElementById('sticker-title');
+            const descEl = document.getElementById('sticker-description');
+            
+            const btnFront = document.getElementById('btn-sticker-front');
+            const btnBack = document.getElementById('btn-sticker-back');
+
+            if (side === 'front') {
+                imgEl.src = 'Front Sticker Final-1.jpg';
+                titleEl.innerText = "Front Label View";
+                descEl.innerHTML = "Displays the bold premium typography, roasted coffee beans artwork, and classic origin designation: <strong>Ethiopian Arabica - Yirgacheffe</strong>. Features instant roast indicators spanning Light, Medium, and Dark roasts.";
+                
+                // Adjust classes
+                btnFront.className = "bg-gold text-espresso text-xs font-semibold uppercase tracking-wider py-3 rounded-sm transition duration-300 text-center";
+                btnBack.className = "border border-white/20 hover:border-gold text-cream text-xs font-semibold uppercase tracking-wider py-3 rounded-sm transition duration-300 text-center";
+                
+                document.getElementById('spec-roast').innerText = "Medium Level";
+                document.getElementById('spec-weight').innerText = "1 Pound (16 OZ / 453g)";
+                document.getElementById('distribution-meta').classList.add('opacity-50');
+            } else {
+                imgEl.src = 'Back Sticker Final-1.jpg';
+                titleEl.innerText = "Back Sticker Specs";
+                descEl.innerHTML = "Provides technical parameters for the ultimate heirloom experience. Contains details of roasted and packaged operations by <strong>Morning Aroma Coffee</strong>, local Minnesota LLC distribution variables, and direct inquiry profiles.";
+                
+                // Adjust classes
+                btnBack.className = "bg-gold text-espresso text-xs font-semibold uppercase tracking-wider py-3 rounded-sm transition duration-300 text-center";
+                btnFront.className = "border border-white/20 hover:border-gold text-cream text-xs font-semibold uppercase tracking-wider py-3 rounded-sm transition duration-300 text-center";
+                
+                document.getElementById('spec-roast').innerText = "Medium Level (Washed Process)";
+                document.getElementById('spec-weight').innerText = "1 Pound - Packed Fresh";
+                document.getElementById('distribution-meta').classList.remove('opacity-50');
+            }
+        }
+
+        // Open/Close visual gallery lightbox
+        function openLightbox(imgSrc, captionText) {
+            const lightbox = document.getElementById('lightbox-modal');
+            const img = document.getElementById('lightbox-img');
+            const cap = document.getElementById('lightbox-caption');
+
+            img.src = imgSrc;
+            cap.innerText = captionText;
+            lightbox.classList.remove('hidden');
+            setTimeout(() => {
+                lightbox.classList.remove('opacity-0');
+                lightbox.classList.add('opacity-100');
+            }, 10);
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox-modal');
+            lightbox.classList.remove('opacity-100');
+            lightbox.classList.add('opacity-0');
+            setTimeout(() => {
+                lightbox.classList.add('hidden');
+            }, 300);
+        }
+
+        // Highlight and map interaction
+        function selectRegion(regionKey) {
+            const data = REGIONS_DATA[regionKey];
+            if (!data) return;
+
+            // Update UI elements in the Specimen card
+            document.getElementById('region-title').innerText = data.title;
+            document.getElementById('region-vintage').innerText = data.vintage;
+            document.getElementById('region-altitude').innerText = data.elevation;
+            document.getElementById('region-process').innerText = data.process;
+            document.getElementById('region-score').innerText = data.score;
+            document.getElementById('region-description').innerText = data.description;
+
+            // Varietals tags conversion
+            const container = document.getElementById('region-varietals');
+            container.innerHTML = '';
+            data.varietals.forEach(item => {
+                const tag = document.createElement('span');
+                tag.className = "px-2.5 py-1 bg-cream border border-espresso/10 text-[10px] tracking-wider text-espresso/80 uppercase rounded-sm";
+                tag.innerText = item;
+                container.appendChild(tag);
+            });
+
+            // Visually pulse/slide the card
+            regionSpecimenBox.classList.add('border-gold');
+            setTimeout(() => {
+                regionSpecimenBox.classList.remove('border-gold');
+            }, 600);
+        }
+
+        // Action when user clicks "View Current Lots" in the map card
+        function filterCatalogByRegion() {
+            const currentTitle = document.getElementById('region-title').innerText.toLowerCase();
+            let matchedRegion = 'all';
+            
+            if (currentTitle.includes('guji')) matchedRegion = 'guji';
+            else if (currentTitle.includes('yirgacheffe')) matchedRegion = 'yirgacheffe';
+            else if (currentTitle.includes('sidama')) matchedRegion = 'sidama';
+            else if (currentTitle.includes('jimma') || currentTitle.includes('limu')) matchedRegion = 'jimma';
+            else if (currentTitle.includes('harrar')) matchedRegion = 'harrar';
+
+            document.getElementById('filter-region').value = matchedRegion;
+            filterLots();
+
+            // Smooth scroll to catalog
+            document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Lot filtering and search engines
+        function renderLots(lotsToRender) {
+            lotsGrid.innerHTML = '';
+
+            if (lotsToRender.length === 0) {
+                emptyState.classList.remove('hidden');
+                lotsGrid.classList.add('hidden');
+                return;
+            }
+
+            emptyState.classList.add('hidden');
+            lotsGrid.classList.remove('hidden');
+
+            lotsToRender.forEach(lot => {
+                const isSelected = selectedSamples.includes(lot.id);
+                const buttonText = isSelected ? "Added" : "Add to Samples";
+                const buttonClass = isSelected 
+                    ? "bg-espresso text-cream border border-gold/40 hover:bg-gold hover:text-espresso" 
+                    : "bg-white text-espresso border border-espresso/15 hover:border-gold hover:text-gold";
+
+                const card = document.createElement('div');
+                card.className = "bg-white border border-gold/10 flex flex-col justify-between hover:shadow-xl transition duration-500 relative group rounded-sm overflow-hidden";
+                card.innerHTML = `
+                    <div class="relative h-48 overflow-hidden bg-espresso">
+                        <img src="${lot.img}" alt="${lot.title}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter brightness-90">
+                        <div class="absolute inset-0 bg-gradient-to-t from-espresso/80 via-transparent to-transparent"></div>
+                        <div class="absolute top-3 left-3 bg-espresso/80 backdrop-blur-md px-2.5 py-1 text-[10px] font-bold text-gold tracking-widest rounded-sm border border-gold/10 uppercase">${lot.id}</div>
+                        <div class="absolute bottom-3 left-3 right-3 text-cream text-[10px] uppercase tracking-wider font-semibold">${lot.regionLabel}</div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-[10px] bg-gold/10 text-goldDark font-semibold px-2 py-0.5 rounded-sm border border-gold/15">${lot.scaScore} SCA Score</span>
+                            </div>
+
+                            <h4 class="font-serif text-2xl font-normal text-espresso mb-2 hover:text-goldDark transition-colors duration-300 cursor-pointer" onclick="openLotModal('${lot.id}')">${lot.title}</h4>
+                            
+                            <div class="flex items-center gap-4 text-[11px] text-espresso/60 mb-4">
+                                <span class="flex items-center gap-1"><i data-lucide="layers" class="w-3.5 h-3.5"></i> ${lot.elevation}</span>
+                                <span class="flex items-center gap-1"><i data-lucide="flask" class="w-3.5 h-3.5"></i> ${lot.processLabel}</span>
+                            </div>
+
+                            <!-- Flavor descriptor tags -->
+                            <div class="flex flex-wrap gap-1.5 mb-6">
+                                ${lot.flavors.map(f => `<span class="px-2 py-0.5 bg-cream hover:bg-gold/10 text-[9px] font-medium tracking-wide uppercase text-espresso/70 rounded-sm border border-espresso/5">${f}</span>`).join('')}
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3 pt-4 border-t border-espresso/5 mt-4">
+                            <button onclick="openLotModal('${lot.id}')" class="flex-1 border border-espresso/15 hover:bg-espresso/5 text-espresso text-[10px] font-bold uppercase tracking-wider py-3 px-2 rounded-sm transition duration-300">
+                                Details
+                            </button>
+                            <button onclick="toggleSampleBasket('${lot.id}')" id="btn-sample-${lot.id}" class="flex-1 ${buttonClass} text-[10px] font-bold uppercase tracking-wider py-3 px-2 rounded-sm transition duration-300">
+                                ${buttonText}
+                            </button>
+                        </div>
+                    </div>
+                `;
+                lotsGrid.appendChild(card);
+            });
+
+            lucide.createIcons();
+        }
+
+        // Main filter execution logic
+        function filterLots() {
+            const searchVal = document.getElementById('catalog-search').value.toLowerCase();
+            const regionVal = document.getElementById('filter-region').value;
+            const processVal = document.getElementById('filter-process').value;
+
+            const filtered = COFFEE_LOTS.filter(lot => {
+                const matchesSearch = lot.title.toLowerCase().includes(searchVal) || 
+                                      lot.id.toLowerCase().includes(searchVal) ||
+                                      lot.flavorNotes.toLowerCase().includes(searchVal) ||
+                                      lot.flavors.some(f => f.toLowerCase().includes(searchVal));
+
+                const matchesRegion = regionVal === 'all' || lot.region === regionVal;
+                
+                let matchesProcess = true;
+                if (processVal !== 'all') {
+                    if (processVal === 'washed') {
+                        matchesProcess = lot.process === 'washed';
+                    } else if (processVal === 'natural') {
+                        matchesProcess = lot.process === 'natural';
+                    } else if (processVal === 'anaerobic') {
+                        matchesProcess = lot.process === 'anaerobic';
+                    }
+                }
+
+                const matchesFlavors = activeFlavorFilters.length === 0 || 
+                                       activeFlavorFilters.every(f => lot.flavors.includes(f));
+
+                return matchesSearch && matchesRegion && matchesProcess && matchesFlavors;
+            });
+
+            renderLots(filtered);
+        }
+
+        // Handles clicking flavor descriptors buttons
+        function toggleFlavorFilter(flavorName) {
+            const btn = document.querySelector(`.flavor-btn[data-flavor="${flavorName}"]`);
+            if (activeFlavorFilters.includes(flavorName)) {
+                activeFlavorFilters = activeFlavorFilters.filter(f => f !== flavorName);
+                btn.classList.remove('bg-gold', 'text-espresso', 'border-gold');
+                btn.classList.add('bg-white', 'text-espresso', 'border-espresso/10');
+            } else {
+                activeFlavorFilters.push(flavorName);
+                btn.classList.add('bg-gold', 'text-espresso', 'border-gold');
+                btn.classList.remove('bg-white', 'text-espresso', 'border-espresso/10');
+            }
+            filterLots();
+        }
+
+        // Resets filters in the catalog UI
+        function resetFilters() {
+            document.getElementById('catalog-search').value = '';
+            document.getElementById('filter-region').value = 'all';
+            document.getElementById('filter-process').value = 'all';
+
+            // Reset buttons
+            document.querySelectorAll('.flavor-btn').forEach(btn => {
+                btn.classList.remove('bg-gold', 'text-espresso', 'border-gold');
+                btn.classList.add('bg-white', 'text-espresso', 'border-espresso/10');
+            });
+            activeFlavorFilters = [];
+            
+            filterLots();
+        }
+
+        // Modal functions
+        function openLotModal(lotId) {
+            const lot = COFFEE_LOTS.find(l => l.id === lotId);
+            if (!lot) return;
+
+            // Fill modal information fields
+            document.getElementById('modal-lot-id').innerText = lot.id;
+            document.getElementById('modal-title').innerText = lot.title;
+            document.getElementById('modal-origin').innerText = lot.regionLabel;
+            document.getElementById('modal-sca-score').innerText = lot.scaScore;
+            document.getElementById('modal-altitude').innerText = lot.elevation;
+            document.getElementById('modal-moisture').innerText = lot.moisture;
+            document.getElementById('modal-water-act').innerText = lot.waterActivity;
+            document.getElementById('modal-inventory').innerText = lot.inventory;
+            document.getElementById('modal-flavor-desc').innerText = lot.flavorNotes;
+            document.getElementById('modal-warehouse').innerText = lot.warehouse;
+
+            // Dynamic grading sheet rendering (SCA criteria mock distributions)
+            const scaVal = parseFloat(lot.scaScore);
+            const acidityBase = (scaVal * 0.1).toFixed(2);
+            const sweetnessBase = (scaVal * 0.102).toFixed(2);
+            const bodyBase = (scaVal * 0.096).toFixed(2);
+            const clarityBase = (scaVal * 0.098).toFixed(2);
+
+            document.getElementById('score-acidity').innerText = `${acidityBase} / 10`;
+            document.getElementById('score-sweetness').innerText = `${sweetnessBase} / 10`;
+            document.getElementById('score-body').innerText = `${bodyBase} / 10`;
+            document.getElementById('score-clarity').innerText = `${clarityBase} / 10`;
+
+            // Adjust element bar percentages
+            document.getElementById('bar-acidity').style.width = `${acidityBase * 10}%`;
+            document.getElementById('bar-sweetness').style.width = `${sweetnessBase * 10}%`;
+            document.getElementById('bar-body').style.width = `${bodyBase * 10}%`;
+            document.getElementById('bar-clarity').style.width = `${clarityBase * 10}%`;
+
+            // Adjust sample action button inside modal
+            const sampleBtn = document.getElementById('modal-sample-btn');
+            const isSelected = selectedSamples.includes(lot.id);
+            sampleBtn.innerHTML = isSelected 
+                ? `<i data-lucide="check-circle" class="w-4 h-4"></i> Remove Lot from Request`
+                : `<i data-lucide="package" class="w-4 h-4"></i> Add Lot to Sample Request`;
+
+            // Set onclick functionality
+            sampleBtn.setAttribute('onclick', `toggleSampleBasket('${lot.id}'); closeLotModal();`);
+
+            // Pop modal
+            lotModal.classList.remove('hidden');
+            setTimeout(() => {
+                lotModal.classList.remove('opacity-0');
+                lotModal.classList.add('opacity-100');
+            }, 10);
+            
+            lucide.createIcons();
+        }
+
+        function closeLotModal() {
+            lotModal.classList.remove('opacity-100');
+            lotModal.classList.add('opacity-0');
+            setTimeout(() => {
+                lotModal.classList.add('hidden');
+            }, 300);
+        }
+
+        // Basket management functions
+        function toggleSampleBasket(lotId) {
+            const lot = COFFEE_LOTS.find(l => l.id === lotId);
+            if (!lot) return;
+
+            if (selectedSamples.includes(lotId)) {
+                selectedSamples = selectedSamples.filter(id => id !== lotId);
+                showToast(`Removed ${lot.id} from your sample request.`);
+            } else {
+                selectedSamples.push(lotId);
+                showToast(`Added ${lot.id} to your sample request.`);
+            }
+
+            updateBasketUI();
+            
+            // Re-render lots to update button styles in the catalog
+            filterLots();
+        }
+
+        function updateBasketUI() {
+            // Check empty state
+            if (selectedSamples.length === 0) {
+                basketEmptyState.classList.remove('hidden');
+            } else {
+                basketEmptyState.classList.add('hidden');
+            }
+
+            // Clean active basket UI list first (except empty state placeholder)
+            const listItems = sampleBasket.querySelectorAll('li:not(#basket-empty-state)');
+            listItems.forEach(item => item.remove());
+
+            // Build item entries
+            selectedSamples.forEach(lotId => {
+                const lot = COFFEE_LOTS.find(l => l.id === lotId);
+                const item = document.createElement('li');
+                item.className = "flex items-center justify-between bg-white/5 p-2 rounded-sm border border-white/5 hover:border-white/10 transition";
+                item.innerHTML = `
+                    <span><strong>${lot.id}</strong> - ${lot.title}</span>
+                    <button onclick="toggleSampleBasket('${lot.id}')" class="text-clay hover:text-white transition duration-200">
+                        <i data-lucide="trash-2" class="w-4 h-4"></i>
+                    </button>
+                `;
+                sampleBasket.appendChild(item);
+            });
+
+            // Update badge totals
+            selectedCount.innerText = `${selectedSamples.length} Selected`;
+
+            lucide.createIcons();
+        }
+
+        // Quick trigger helper for toast feedback alerts
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const text = document.getElementById('toast-message');
+            text.innerText = message;
+            
+            toast.classList.remove('opacity-0');
+            toast.classList.add('opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('opacity-100');
+                toast.classList.add('opacity-0');
+            }, 4000);
+        }
+
+        // Handles submitting the sample requests forms
+        function submitForm(event) {
+            event.preventDefault();
+
+            // Compile input data fields
+            const name = document.getElementById('form-name').value;
+            const company = document.getElementById('form-company').value;
+
+            // Simple validation simulation
+            if (selectedSamples.length === 0) {
+                showToast("Please add at least one micro-lot to your sample request basket.");
+                return;
+            }
+
+            // Success feedback representation
+            showToast(`Thank you, ${name}! Your request for ${selectedSamples.length} samples is on its way to ${company}.`);
+
+            // Reset forms and basket details
+            document.getElementById('sample-request-form').reset();
+            selectedSamples = [];
+            updateBasketUI();
+            filterLots();
+        }
+
+        // Handles newsletter updates subscribing
+        function subscribeNewsletter(event) {
+            event.preventDefault();
+            const email = document.getElementById('newsletter-email').value;
+            showToast(`Subscribed ${email} to Kollobo Harvest Dispatches successfully.`);
+            document.getElementById('newsletter-email').value = '';
+        }
+    </script>
+</body>
+</html>
