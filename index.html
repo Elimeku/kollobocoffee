@@ -357,7 +357,7 @@
                     <div class="relative bg-stone-900 border border-gold/10 p-4 rounded-sm shadow-2xl max-w-md w-full aspect-[2/3] flex items-center justify-center overflow-hidden group">
                         
                         <!-- Visual referencing verbatim: front-sticker-final-1.jpg & Back Sticker Final-1.jpg -->
-                        <img id="sticker-inspector-img" src="front-sticker-final-1.jpg" alt="Kollobo Coffee Official Sticker Design" class="max-h-[550px] w-auto object-contain transition-all duration-500 ease-in-out group-hover:scale-102">
+                        <img id="sticker-inspector-img" src="Kollobo-front.png" alt="Kollobo Coffee Official Front" class="max-h-[550px] w-auto object-contain transition-all duration-500 ease-in-out group-hover:scale-102">
                         
                         <div class="absolute bottom-4 left-4 right-4 bg-espresso/90 border border-white/10 backdrop-blur-md p-3 text-center text-[10px] tracking-widest text-gold uppercase">
                             Hover to magnify physical design values
@@ -535,7 +535,7 @@
                 <!-- Image Card 3: Front Sticker -->
                 <div class="relative overflow-hidden group rounded-sm cursor-pointer border border-white/5 bg-stone-900 shadow-lg hover:border-gold/30 transition-all duration-500" onclick="openLightbox('front-sticker-final-1.jpg', 'Official Kollobo Coffee Front Packaging Label')">
                     <div class="aspect-[3/4] overflow-hidden relative">
-                        <img src="front-sticker-final-1.jpg" alt="Official Kollobo Coffee Front Packaging Label" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter brightness-95">
+                        <img src="Kollobo-back.png" alt="Official Kollobo back" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter brightness-95">
                         <div class="absolute inset-0 bg-gradient-to-t from-espresso via-transparent to-transparent opacity-80 z-10"></div>
                     </div>
                     <div class="absolute bottom-4 left-4 right-4 z-20">
@@ -1049,7 +1049,7 @@
                 waterActivity: "0.54 aw",
                 inventory: "28 Bags left",
                 warehouse: "Houston Warehouse (Cleared)",
-                img: "front-sticker-final-1.jpg"
+                img: "Kollobo-bag.png",
             },
             {
                 id: "LOT-061",
@@ -1205,7 +1205,7 @@
             const btnBack = document.getElementById('btn-sticker-back');
 
             if (side === 'front') {
-                imgEl.src = 'front-sticker-final-1.jpg';
+                imgEl.src = 'Kollobo-front.png';
                 titleEl.innerText = "Front Label View";
                 descEl.innerHTML = "Displays the bold premium typography, roasted coffee beans artwork, and classic origin designation: <strong>Ethiopian Arabica - Yirgacheffe</strong>. Features instant roast indicators spanning Light, Medium, and Dark roasts.";
                 
